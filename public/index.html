@@ -1,0 +1,50 @@
+<!doctype html>
+<html class="no-js" lang="en" ng-app="headsUpApp" manifest="headsUp.appcache">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Heads Up</title>
+    <meta name="description" content="Heads up clone">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+
+    <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.4/material.indigo-pink.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href='https://fonts.googleapis.com/css?family=Roboto|Orbitron:700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/css/app.css">
+
+    <script src="https://storage.googleapis.com/code.getmdl.io/1.0.4/material.min.js"></script>
+    <script src="/js/MediaStreamRecorder.js"></script>
+    <!-- for Edige/FF/Chrome/Opera/etc. getUserMedia support -->
+    <script src="/js/adapter.js"></script>
+    <script src="/js/angular.min.js"></script>
+    <script src="/js/angular-route.min.js"></script>
+    <script src="/js/ng-app.js"></script>
+    <script src="/js/ng-services.js?t"></script>
+    <script src="/js/ng-controllers.js?t"></script>
+  </head>
+  <body>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header" ng-controller="MainController">
+      <header class="mdl-layout__header" ng-if="page.showHeader">
+        <!-- Top row, always visible -->
+        <div class="mdl-layout__header-row">
+          <!-- Title -->
+          <span class="mdl-layout-title">Duck!</span>
+          <div class="mdl-layout-spacer"></div>
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable
+                      mdl-textfield--floating-label mdl-textfield--align-right">
+            <nav class="mdl-navigation">
+              <a class="mdl-navigation__linK mdl-button--icon fullscreen-button" ng-click="goFullscreen()">
+                <i class="material-icons" ng-if="isFullscreen">fullscreen_exit</i>
+                <i class="material-icons" ng-if="!isFullscreen">fullscreen</i>
+              </a>
+            </nav>
+          </div>
+        </div>
+      </header>
+      <a href="/#/" class="mdl-layout__drawer-button" ng-if="page.showBackButton"><i class="material-icons">arrow_back</i></a>
+      <main class="mdl-layout__content">
+        <div class="page-content" ng-view ng-if="loaded"></div>
+      </main>
+    </div>
+  </body>
+</html>

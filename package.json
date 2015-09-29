@@ -1,0 +1,14 @@
+{
+  "name": "heads-up",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "dash": "^0.3.0",
+    "express": "3.2.6",
+    "express-handlebars": "^2.0.1",
+    "h5bp": "^0.1.4"
+  }
+}

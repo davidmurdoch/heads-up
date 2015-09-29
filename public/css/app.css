@@ -1,0 +1,196 @@
+html,body{
+    height:100%;
+    margin:0;
+    padding:0;
+    background:
+    radial-gradient(hsl(0, 100%, 27%) 4%, hsl(0, 100%, 18%) 9%, hsla(0, 100%, 20%, 0) 9%) 0 0,
+    radial-gradient(hsl(0, 100%, 27%) 4%, hsl(0, 100%, 18%) 8%, hsla(0, 100%, 20%, 0) 10%) 50px 50px,
+    radial-gradient(hsla(0, 100%, 30%, 0.8) 20%, hsla(0, 100%, 20%, 0)) 50px 0,
+    radial-gradient(hsla(0, 100%, 30%, 0.8) 20%, hsla(0, 100%, 20%, 0)) 0 50px,
+    radial-gradient(hsla(0, 100%, 20%, 1) 35%, hsla(0, 100%, 20%, 0) 60%) 50px 0,
+    radial-gradient(hsla(0, 100%, 20%, 1) 35%, hsla(0, 100%, 20%, 0) 60%) 100px 50px,
+    radial-gradient(hsla(0, 100%, 15%, 0.7), hsla(0, 100%, 20%, 0)) 0 0,
+    radial-gradient(hsla(0, 100%, 15%, 0.7), hsla(0, 100%, 20%, 0)) 50px 50px,
+    linear-gradient(45deg, hsla(0, 100%, 20%, 0) 49%, hsla(0, 100%, 0%, 1) 50%, hsla(0, 100%, 20%, 0) 70%) 0 0,
+    linear-gradient(-45deg, hsla(0, 100%, 20%, 0) 49%, hsla(0, 100%, 0%, 1) 50%, hsla(0, 100%, 20%, 0) 70%) 0 0;
+    background-color: #300;
+    background-size: 100px 100px;
+}
+/* disable chromecast icon on video elements*/
+video::-internal-media-controls-overlay-cast-button {
+    display: none;
+}
+
+.mdl-layout__content{display:flex;}
+.page-content{flex-grow:1;display:flex;position:relative;flex-flow:column;}
+.fullscreen-button{cursor:pointer;}
+.decks{height:0;}
+.deck{
+    min-height:0;
+    background:transparent;
+    overflow:visible;
+}
+.deck > div{
+    cursor:pointer;
+    background:transparent;
+    -webkit-background-clip: padding-box;
+    border-radius:5%;
+    margin:16px;
+}
+.deck img{width:100%;border-radius:5%;}
+.deck-details{
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+    background-color: #fff;
+    transform: translate(-50%, -50%);
+}
+.modal-background{
+    width:100%;
+    top:0;
+    left:0;
+    height:100%;
+    position:fixed;
+    background:rgba(0,0,0,.5);
+    z-index:1;
+}
+
+.getReady, .startingIn, .countdown{
+    font-size:3em;
+    opacity:.8;
+    color:#fff;
+    font-family: 'Orbitron', sans-serif;
+    font-weight:bold;
+    text-shadow:0 0 1px #000;
+}
+.getReady,.startingIn{font-size:3em;opacity:1;}
+
+.card-container{
+  background:rgb(116,129,199) url(../img/grid.png);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow:1;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+}
+.cards{
+    list-style:none;
+    display:block;
+    margin: 0;
+    padding:0;
+}
+.cards li{
+    display:none;
+    margin:0;
+    padding:0;
+    font-weight:bold;
+    line-height:1.1em;
+}
+.cards li.selected{
+    display:block;
+    color:#fff;
+    text-shadow:0 1px 1px #000;
+    margin: auto auto;
+    font-size:5em;
+    margin-bottom:.5em;
+}
+.message{
+    display:inline-block;
+    opacity:0;
+    font-weight:bold;
+    font-size:2em;
+}
+.message.pass{color:red;}
+.message.correct{color:green;}
+.message.show{
+    opacity:1;
+    animation: easeInOut 1.5s linear;
+}
+
+@keyframes easeInOut {
+    0% {
+        transform: translateY(-1em) scale(1);
+        opacity:0;
+    }
+    50% {
+        transform: translateY(-1em) scale(8);
+        opacity:.75;
+    }
+    100% {
+        transform: translateY(-1em) scale(1);
+        opacity:0;
+    }
+}
+.stats{
+    height:100%;
+    width:100%;
+    position:absolute;
+    left:0;
+    top:0;
+    font-weight:bold;
+    font-size:2em;
+    background: rgba(0,0,0,.7) url(../img/grid.png) repeat;
+    min-height:100%;
+    height:auto;
+    width:100%;
+    text-align:center;
+
+}
+.stats h2{
+    font-weight:bold;
+    color:#fff;
+}
+.stats .score{
+    color:#fff;
+    font-size:3em;
+    font-weight:bold;
+    text-align:center;
+    border-radius: 100%;
+    border: solid 4px #fff;
+    margin: 0 auto 1em auto;
+    width: 1.5em;
+    height: 1.5em;
+    line-height: 1.5em;
+    background: rgba(255,255,255,.3);
+}
+.stat{
+    list-style:none;
+    margin:0;
+    padding:0;
+    font-size:1em;
+    font-weight:bold;
+}
+.stat li{
+    margin-bottom:.75em;
+}
+.stats .pick-deck-button{
+    position:fixed;
+    bottom: 0;
+    left:0;
+    width:100%;
+}
+.stats > *:nth-last-child(2){
+    margin-bottom:64px;
+}
+.stat-status-CORRECT{
+    color:green;
+}
+.stat-status-PASS{
+    color:red;
+}
+.cards-group{
+    position:relative;
+    z-index:1;
+}
+#video{
+    width:100%;
+    transform:translateY(-50%);
+
+    position:absolute;
+    left:0;
+    top:50%;
+    opacity:.3;
+}

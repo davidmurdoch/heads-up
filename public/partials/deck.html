@@ -1,0 +1,24 @@
+<div class="card-container" ng-click="toggleHeader()" ng-if="!gameOver">
+    <div class="getReady" ng-if="startingIn>3">GET READY!</div>
+    <div class="startingIn" ng-if="startingIn>0&&startingIn<4">{{startingIn}}</div>
+    <div class="game" ng-if="startingIn>=0 || remainingTime>=0">
+        <div class="cards-group" ng-if="inProgress && startingIn<=0">
+            <ul class="cards">
+                <li class="selected">{{selectedCard.title}}</li>
+            </ul>
+            <div class="message {{messageClass}}">{{message}}</div>
+            <div class="countdown">{{remainingTime}}</div>
+        </div>
+
+        <video muted ng-if="videoSrc&&videoSrc!='#'" id="video" autoplay="" ng-src="{{videoSrc}}"></video>
+    </div>
+</div>
+<div class="stats" ng-if="gameOver">
+    <h2>WORDS SCORED</h2>
+    <div class="score">{{score}}</div>
+    <ul class="stat">
+        <li ng-repeat="stat in stats" class="stat-status-{{stat.status}}">{{stat.card.title}}</li>
+    </ul>
+    <button ng-click="saveVideo()" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">Save Video</button>
+    <a class="pick-deck-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" href="/#/">Pick Another Deck</a>
+</div>

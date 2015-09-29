@@ -1,0 +1,50 @@
+[
+	{
+		"name":"I Know You!",
+		"id":0,
+		"description":"Let's get personal! Describe the person on the card without using any other people, places, genders, or appearance. No pointing!",
+		"img":"img/i-know-you.jpg"
+	},
+	{
+		"name":"Act It Out",
+		"id":1,
+		"description":"It's time to mime! Act out the action on the card for your teammate to guess. No talking!",
+		"img":"img/act-it-out.jpg"
+	},
+	{
+		"name":"Superstars",
+		"id":2,
+		"description":"They're all here, the biggest pop culture celebrities! Help your teammate guess as manay starts as you can without saying any part of the name on the card, and withour rhyming!",
+		"img":"img/superstars.png"
+	},
+	{
+		"name":"just for kids",
+		"id":3,
+		"description":"Whether you're a kid, or just a kid at heart, this is the deck for you! Help your teammate guess the word on the card without saying what it is!",
+		"img":"img/just-for-kids.png"
+	},
+	{
+		"name":"animals gone wild",
+		"id":4,
+		"description":"Get your teammate to guess the animal on the card without saying any part of the animal name on the card, and without rhyming!",
+		"img":"img/animals-gone-wild.png"
+	},
+	{
+		"name":"accents & impressions",
+		"id":5,
+		"description":"Do your best accents and impressions to help your teammate figure out the accent or person on the card, without saying anything on the card, and without rhyming!",
+		"img":"img/accents-impressions.png"
+	},
+	{
+		"name":"Famous Families",
+		"id":6,
+		"description":"This is a deck fulll of famous families from film and television and beyond! Get your teammate to guess these iconic families without saying any part of the name on the card, and without rhyming!",
+		"img":"img/famous-families.png"
+	},
+	{
+		"name":"Hum It",
+		"id":7,
+		"description":"Get your teammate(s) to guess the song on the card without using any lyrics, only humming! For an extra challenge: try just whistling.",
+		"img":"img/hum-it.png"
+	}
+]

@@ -1,0 +1,19 @@
+<div class="mdl-grid decks">
+  <div ng-repeat="deck in decks | filter:query" class="mdl-card mdl-cell mdl-cell--3-col mdl-cell--2-col-tablet mdl-cell--2-col-phone deck">
+    <div ng-click="showDetails(deck)" title="{{deck.name}}" class="mdl-shadow--16dp"><img alt="{{deck.name}}" ng-src="{{deck.img}}"></div>
+  </div>
+</div>
+
+<div class="modal-background" ng-if="details"></div>
+<div class="deck-details mdl-card mdl-shadow--16dp" ng-if="details" style=";max-width:600px">
+  <div class="mdl-card__title" style="height:50vh;background-image:url({{details.img}});background-position:50% 50%; backgrond-size:cover;">
+    <h2 class="mdl-card__title-text" style="background-color: #fff; padding: .2em;">{{details.name}}</h2>
+  </div>
+  <div class="mdl-card__supporting-text">
+    {{details.description}}
+  </div>
+  <div class="mdl-card__actions mdl-card--border" style="text-align:right">
+    <a class="mdl-button mdl-js-button" ng-click="closeDetails()" style="margin-right:8px">Back</a>
+    <a class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored float-right" href="#/deck/{{details.id}}" ng-click="goFullscreen()">PLAY!</a>
+  </div>
+</div>
